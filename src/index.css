@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --wa-teal: #00a884;
+  --wa-teal-hover: #02906f;
+  --wa-green-accent: #25d366;
+  --wa-blue-tick: #53bdeb;
+  --wa-bg-desktop: #d1d7db;
+  --wa-header-bg: #f0f2f5;
+  --wa-panel-bg: #ffffff;
+  --wa-panel-hover: #f5f6f6;
+  --wa-panel-active: #f0f2f5;
+  --wa-search-bg: #f0f2f5;
+  --wa-text-primary: #111b21;
+  --wa-text-secondary: #667781;
+  --wa-text-muted: #8696a0;
+  --wa-border: #e9edef;
+  --wa-chat-bg: #efeae2;
+  --wa-bubble-incoming: #ffffff;
+  --wa-bubble-outgoing: #d9fdd3;
+  --wa-footer-bg: #f0f2f5;
+  --wa-input-bg: #ffffff;
+  --wa-icon: #54656f;
+  --wa-icon-hover: #111b21;
+  --wa-system-banner: #ffeecd;
+  --wa-system-banner-text: #54656f;
+  --wa-unread-badge: #25d366;
+  --wa-doodle-opacity: 0.35;
+  --wa-doodle-filter: none;
+}
+
+.dark {
+  --wa-teal: #00a884;
+  --wa-teal-hover: #02906f;
+  --wa-green-accent: #00a884;
+  --wa-blue-tick: #53bdeb;
+  --wa-bg-desktop: #0c1317;
+  --wa-header-bg: #202c33;
+  --wa-panel-bg: #111b21;
+  --wa-panel-hover: #202c33;
+  --wa-panel-active: #2a3942;
+  --wa-search-bg: #202c33;
+  --wa-text-primary: #e9edef;
+  --wa-text-secondary: #8696a0;
+  --wa-text-muted: #667781;
+  --wa-border: #222d34;
+  --wa-chat-bg: #0b141a;
+  --wa-bubble-incoming: #202c33;
+  --wa-bubble-outgoing: #005c4b;
+  --wa-footer-bg: #202c33;
+  --wa-input-bg: #2a3942;
+  --wa-icon: #aebac1;
+  --wa-icon-hover: #e9edef;
+  --wa-system-banner: #182229;
+  --wa-system-banner-text: #ffd279;
+  --wa-unread-badge: #00a884;
+  --wa-doodle-opacity: 0.08;
+  --wa-doodle-filter: invert(1);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--wa-bg-desktop);
+  color: var(--wa-text-primary);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom WhatsApp Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+/* Authentic WhatsApp Chat Doodle Wallpaper */
+.whatsapp-chat-bg {
+  background-color: var(--wa-chat-bg);
+  position: relative;
+}
+
+.whatsapp-chat-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: var(--wa-doodle-opacity);
+  filter: var(--wa-doodle-filter);
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23707070' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M65 35c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0-4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm120 40c6 0 10-4 10-10s-4-10-10-10-10 4-10 10 4 10 10 10zm0-4c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zm100-30h18v18h-18v-18zm4 4v10h10v-10h-10zm-230 90l10 16h-20l10-16zm60 40c4 0 7-3 7-7s-3-7-7-7-7 3-7 7 3 7 7 7zm160-20c5.5 0 10-4.5 10-10s-4.5-10-10-10-10 4.5-10 10 4.5 10 10 10zm-180 80h24v8h-24v-8zm130-30c8 0 14-6 14-14s-6-14-14-14-14 6-14 14 6 14 14 14zm0-6c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm-80 60c5 0 9-4 9-9s-4-9-9-9-9 4-9 9 4 9 9 9zm150 40l14-20 14 20h-28zm-220 30h20v20h-20v-20zm120 20c6 0 11-5 11-11s-5-11-11-11-11 5-11 11 5 11 11 11z'/%3E%3Cpath d='M30 250c0-11 9-20 20-20s20 9 20 20-9 20-20 20-20-9-20-20zm8 0c0 6.6 5.4 12 12 12s12-5.4 12-12-5.4-12-12-12-12 5.4-12 12zm290-90c0-16.5 13.5-30 30-30s30 13.5 30 30-13.5 30-30 30-30-13.5-30-30zm10 0c0 11 9 20 20 20s20-9 20-20-9-20-20-20-20 9-20 20zm-130 50l12-16 12 16h-24zm-60 90c-8 0-15-7-15-15s7-15 15-15 15 7 15 15-7 15-15 15zm0-6c5 0 9-4 9-9s-4-9-9-9-9 4-9 9 4 9 9 9z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 380px 380px;
+}
+
+/* Chat bubble tails */
+.bubble-tail-in {
+  position: absolute;
+  top: 0;
+  left: -8px;
+  width: 8px;
+  height: 13px;
+  color: var(--wa-bubble-incoming);
+}
+
+.bubble-tail-out {
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 8px;
+  height: 13px;
+  color: var(--wa-bubble-outgoing);
+}
